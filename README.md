@@ -9,6 +9,7 @@ If you select the tick in the ‘remember me’ box when you login in any web pa
 			$user = $this->Auth->identify();
 			if ($user) {
 				$this->Auth->setUser($user);				
+				//xx is the remember me checkbox name that is set in the view file like eg. <input class="form-control" type="checkbox" name="xx"> Remember Me</input>
 				if (isset($this->request->getData()['xx'])) {
 					$username= $this->request->data['email'];
 					$password = $this->request->data['password'];					
@@ -38,6 +39,7 @@ If you select the tick in the ‘remember me’ box when you login in any web pa
 				}
 			}
 		}
+    
     
     public function logout() {
         $this->Auth->logout();
